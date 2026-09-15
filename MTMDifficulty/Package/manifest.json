@@ -1,0 +1,10 @@
+﻿{
+  "name": "MTM Difficulty",
+  "description": "Global multipliers for creature and boss health.",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/mightytightymods/mtm-difficulty",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2350",
+    "ValheimModding-Jotunn-2.30.0"
+  ]
+}

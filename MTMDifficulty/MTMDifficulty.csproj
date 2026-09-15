@@ -2,13 +2,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net48</TargetFramework>
-    <RootNamespace>JotunnModStub</RootNamespace>
-    <AssemblyName>JotunnModStub</AssemblyName>
+    <TargetFramework>net462</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>10</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>MTMDifficulty</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -38,18 +37,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="README.md" />
+    <PackageReference Include="JotunnLib" Version="2.30.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JotunnLib" Version="2.27.1" />
-  </ItemGroup>
-
+  
   <PropertyGroup>
     <VALHEIM_MANAGED>$(VALHEIM_INSTALL)/valheim_Data/Managed</VALHEIM_MANAGED>
-    <UNITY_FOLDER>$(SolutionDir)JotunnModStubUnity</UNITY_FOLDER>
+    <UNITY_FOLDER>$(SolutionDir)MTMDifficultyUnity</UNITY_FOLDER>
   </PropertyGroup>
 
   <Target Name="CopyToUnity">
