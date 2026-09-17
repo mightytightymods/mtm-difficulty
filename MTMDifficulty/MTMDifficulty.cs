@@ -24,7 +24,6 @@ namespace MTMDifficulty
         
         public static ConfigEntry<bool> VerboseLogging;
 
-
         readonly Harmony harmony = new Harmony(PluginGUID);
         
         internal static ManualLogSource Log;
@@ -60,10 +59,10 @@ namespace MTMDifficulty
             // Unlike the other configs, verbose logging can be enabled client-side by all players, not just admin.
             #if DEBUG
             VerboseLogging = Config.Bind("Diagnostics", "VerboseLogging", true,
-                new ConfigDescription("Logs detailed per-hit and per-creature scaling calculations."));
+                new ConfigDescription("Logs detailed per-hit and per-creature scaling information."));
             #else
             VerboseLogging = Config.Bind("Diagnostics", "VerboseLogging", false,
-                new ConfigDescription("Logs detailed per-hit and per-creature scaling calculations."));
+                new ConfigDescription("Logs detailed per-hit and per-creature scaling information."));
             #endif
             
             harmony.PatchAll();

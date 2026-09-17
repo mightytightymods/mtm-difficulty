@@ -37,11 +37,11 @@ namespace MTMDifficulty
     [HarmonyPatch(typeof(Character), nameof(Character.Damage))]
     public static class CharacterDamagePatch
     {
-        private struct DamageComponent
+        private struct DamageComponentLog
         {
-            public string Name { get; set; }
-            public float Before { get; set; }
-            public float After { get; set; }
+            public string Name { get; init; }
+            public float Before {get; init; }
+            public float After { get; init; }
         }
         
         static void Prefix(Character __instance, ref HitData hit)
@@ -71,16 +71,16 @@ namespace MTMDifficulty
                 // relevant.
                 var components = new[]
                 {
-                    new DamageComponent { Name = "blunt", Before = before.m_blunt, After = after.m_blunt },
-                    new DamageComponent { Name = "slash", Before = before.m_slash, After = after.m_slash },
-                    new DamageComponent { Name = "pierce", Before = before.m_pierce, After = after.m_pierce },
-                    new DamageComponent { Name = "chop", Before = before.m_chop, After = after.m_chop },
-                    new DamageComponent { Name = "pickaxe", Before = before.m_pickaxe, After = after.m_pickaxe },
-                    new DamageComponent { Name = "fire", Before = before.m_fire, After = after.m_fire },
-                    new DamageComponent { Name = "frost", Before = before.m_frost, After = after.m_frost },
-                    new DamageComponent { Name = "lightning", Before = before.m_lightning, After = after.m_lightning },
-                    new DamageComponent { Name = "poison", Before = before.m_poison, After = after.m_poison },
-                    new DamageComponent { Name = "spirit", Before = before.m_spirit, After = after.m_spirit },
+                    new DamageComponentLog { Name = "blunt", Before = before.m_blunt, After = after.m_blunt },
+                    new DamageComponentLog { Name = "slash", Before = before.m_slash, After = after.m_slash },
+                    new DamageComponentLog { Name = "pierce", Before = before.m_pierce, After = after.m_pierce },
+                    new DamageComponentLog { Name = "chop", Before = before.m_chop, After = after.m_chop },
+                    new DamageComponentLog { Name = "pickaxe", Before = before.m_pickaxe, After = after.m_pickaxe },
+                    new DamageComponentLog { Name = "fire", Before = before.m_fire, After = after.m_fire },
+                    new DamageComponentLog { Name = "frost", Before = before.m_frost, After = after.m_frost },
+                    new DamageComponentLog { Name = "lightning", Before = before.m_lightning, After = after.m_lightning },
+                    new DamageComponentLog { Name = "poison", Before = before.m_poison, After = after.m_poison },
+                    new DamageComponentLog { Name = "spirit", Before = before.m_spirit, After = after.m_spirit },
                 };
  
                 var lines = new List<string>();

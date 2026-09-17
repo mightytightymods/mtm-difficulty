@@ -8,7 +8,7 @@ Global control over creature and boss health and damage, including star bonuses.
 * Minimalist scope and design
 
 ## Configuration
-Configuration follows basic BepInEx patterns that are mostly self-explanatory. The [official Configuration Manager](https://thunderstore.io/c/valheim/p/Azumatt/Official_BepInEx_ConfigurationManager/) is excellent.
+Configuration follows basic BepInEx patterns that are mostly self-explanatory. The [official Configuration Manager](https://thunderstore.io/c/valheim/p/Azumatt/Official_BepInEx_ConfigurationManager/) is excellent and greatly speeds up iterative adjustments.
 
 ### Per-star level adjustments
 
@@ -44,14 +44,16 @@ Applying the example configuration changes above to a *Fuling* would result in:
 | 2-star | 525 | 613 | 170 | 170 || 2-star | 525 | 170 | 613 | 170 |
 
 
-The example configuration keeps 2-star damage at vanilla levels, while making 0 and 1-star slightly more threatening.
+The example configuration keeps 2-star damage at vanilla levels, while making 0 and 1-star slightly more damaging.
 
 ## Interactions and Compatability
 This mod is unlikely to play nicely with other difficulty adjusting mods, such as `CreatureLevelAndLootControl` or `StarLevelSystem`.
 
 This mod acts **on top** of Valheim's World Modifiers difficulty system, respecting and **multiplying** those values. Since it applies the configured multipliers after the World Modifiers have been applied, you can, for example, use this mod to apply a second set of adjustments that would result in a "Hard" setting that was harder or easier.
 
-Multipliers are applied when a creature is spawned, or reloaded. If you were fighting a boss and wanted to adjust its health or damage using the BepInEx configuraiton manager, you would first need to leave the immediate area around the boss to force the game to unload the boss, update the boss config, and then approach the re-loaded (and freshly updated) boss. Exiting the game, manually editing the .cfg, and then restarting would have the same effect.
+Health multipliers are applied when a creature is spawned, or reloaded. If you were fighting a boss and wanted to adjust its health using the BepInEx configuraiton manager, you would first need to leave the immediate area around the boss to force the game to unload the boss, update the boss config, and then approach the re-loaded (and freshly updated) boss. Exiting the game, manually editing the .cfg, and then restarting would have the same effect.
+
+Damage multipliers are applied right before a player takes damage. Changes to the damage config are applied instantly.
 
 ## Installation (manual)
 I highly recommend using a mod manager such as [r2modman](https://thunderstore.io/c/valheim/p/ebkr/r2modman/) or [Gale](https://thunderstore.io/c/valheim/p/Kesomannen/GaleModManager/).
@@ -59,4 +61,4 @@ I highly recommend using a mod manager such as [r2modman](https://thunderstore.i
 Manual installation will require getting BepInEx and Jotunn [working first](https://valheim-modding.github.io/Jotunn/guides/installation.html), then extracting the contents of the mod into a subfolder in the \<BepInEx Path>\plugins directory.
 
 ## AI Disclosure
-The icon, most of the code and some of the documentation were generated using a free Claude account. In no sense was this mod "vibe coded."
+Most of the code was generated using a free claude.ai account. In no sense was this mod "vibe coded."
